@@ -8,7 +8,19 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
+@interface ECCollectionViewLayout : UICollectionViewFlowLayout
+
+@end
+
+@interface ECCollectionViewLayoutAttributes : UICollectionViewLayoutAttributes
+@property (nonatomic, strong) UIColor *color;
+@end
+
+@interface ECCollectionReusableView : UICollectionReusableView
+
+@end
+
+@interface ViewController : UICollectionViewController <UICollectionViewDataSource>
 
 
 @end
