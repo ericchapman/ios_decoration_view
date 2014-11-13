@@ -32,8 +32,7 @@ static NSString *kCellReuseIdentifier = @"view_cell";
     for (UICollectionViewLayoutAttributes *attribute in attributes) {
         
         // Look for the first item in a row
-        if (attribute.frame.size.height == self.itemSize.height
-            && attribute.frame.size.width == self.itemSize.width
+        if (attribute.representedElementKind == UICollectionElementCategoryCell
             && attribute.frame.origin.x == self.sectionInset.left) {
             
             // Create decoration attributes
