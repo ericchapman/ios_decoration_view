@@ -13,6 +13,11 @@ static NSString *kCellReuseIdentifier = @"view_cell";
 
 @implementation ECCollectionViewLayout
 
++ (Class)layoutAttributesClass
+{
+    return [ECCollectionViewLayoutAttributes class];
+}
+
 - (void)prepareLayout {
     [super prepareLayout];
     
@@ -76,6 +81,13 @@ static NSString *kCellReuseIdentifier = @"view_cell";
     }
     return layoutAttributes;
 }
+
+- (id)copyWithZone:(NSZone *)zone {
+    ECCollectionViewLayoutAttributes *newAttributes = [super copyWithZone:zone];
+    newAttributes.color = [self.color copyWithZone:zone];
+    return newAttributes;
+}
+
 @end
 
 @implementation ECCollectionReusableView
